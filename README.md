@@ -1,32 +1,122 @@
-# React + TypeScript + Vite
+# 🏏 IPL Ticket Booking Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern and responsive IPL Ticket Booking website built using React, TypeScript, CSS, and Supabase.
 
-Currently, two official plugins are available:
+Users can explore IPL matches, book tickets, select their preferred stand and stadium, and view their booking history.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- 🏠 Home page with an attractive landing section.
+- 🏏 Matches page displaying IPL matches.
+- 🎟️ Online ticket booking form.
+- 🏟️ Stadium and stand selection.
+- 🗄️ Supabase PostgreSQL database integration.
+- 📋 Booking history with saved booking details.
+- 🔄 Refresh booking history.
+- 📱 Responsive user interface.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Technologies Used
 
-## Expanding the Oxlint configuration
+| Technology | Purpose |
+|---|---|
+| React | Frontend development |
+| TypeScript | Type-safe development |
+| CSS | Styling and responsive design |
+| Supabase | Backend and database |
+| PostgreSQL | Database management |
+| Vite | Development server and build tool |
+| Git & GitHub | Version control |
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## 📂 Project Structure
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```text
+IPL-Ticket-Booking/
+│
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── MatchCard.tsx
+│   │   └── Navbar.tsx
+│   │
+│   ├── pages/
+│   │   ├── Home.tsx
+│   │   ├── Matches.tsx
+│   │   ├── Booking.tsx
+│   │   └── BookingHistory.tsx
+│   │
+│   ├── supabase.ts
+│   ├── App.tsx
+│   ├── App.css
+│   └── index.css
+│
+├── package.json
+├── package-lock.json
+└── README.md
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## ⚙️ Installation and Setup
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/ruchithashetty007-rgb/IPL-Ticket-Booking.git
+```
+
+### 2. Open the project folder
+
+```bash
+cd IPL-Ticket-Booking
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Configure Supabase
+
+Create a Supabase project and configure the project URL and publishable (anon) key in `src/supabase.ts`.
+
+Never expose your Supabase service-role key in frontend code.
+
+Create the `bookings` table with the following columns:
+
+- id
+- name
+- tickets
+- stand
+- venue
+- created_at
+
+Configure appropriate Row Level Security (RLS) policies.
+
+### 5. Run the application
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal.
+
+## 🗄️ Database
+
+This project uses Supabase PostgreSQL to store booking information.
+
+Booking details include:
+
+- Customer name
+- Number of tickets
+- Selected stand
+- Stadium venue
+- Booking date and time
+
+## 👩‍💻 Author
+
+**Ruchitha**
+
+GitHub: ruchithashetty007-rgb
+
+## 📌 Project
+
+IPL Ticket Booking – React + TypeScript + Supabase.
